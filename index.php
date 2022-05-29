@@ -18,14 +18,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="login.php" method="post">
+				<form class="login100-form validate-form" action="loggin.php" method="post">
 					<span class="login100-form-title p-b-43">
-						Loguearse
+						 TOLEDO S.A LOGGIN
  					</span>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="usu">
+						<input class="input100" type="text" name="usuario">
 						<span class="focus-input100"></span>
 						<span class="label-input100">usuario</span>
 					</div>
@@ -36,18 +36,21 @@
 						<span class="focus-input100"></span>
 						<span class="label-input100">Contraseña</span>
 					</div>
+                                        
+                                        
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
+                                        
 						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
+							<!--<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+   -->						<!--	<label class="label-checkbox100" for="ckb1"> -->
+							<!--	Remember me 
+							</label> -->
 						</div>
 
 						<div>
 							<a href="#" class="txt1">
-								Forgot Password?
+							<!--	Forgot Password? -->
 							</a>
 						</div>
 					</div>
@@ -61,7 +64,7 @@
 					
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-							or sign up using
+						<!--	or sign up using -->
 						</span>
 					</div>
 

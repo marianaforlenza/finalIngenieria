@@ -15,7 +15,7 @@ require "conexion.php";
 $con=mysqli_connect($servidorBD, $usuarioBD,$contraBD,$baseDatosBD) or die ("no se puede conectar a la base de datos");
 
 
-$sqlVerifica="select * from usu where usuario='$usuarioForm';";
+$sqlVerifica="select * from USUARIOS where usu='$usuarioForm';";
 
 $resulset=mysqli_query($con, $sqlVerifica);
 
@@ -26,17 +26,17 @@ $registro=mysqli_fetch_assoc($resulset);
 if(mysqli_affected_rows($con)>0){
     //echo "Se encontró el usuario";
 
-    $usu=$registro['usuario'];
+    $usu=$registro['usu'];
     $contra= $registro['contra'];
     $nomyape= $registro['nombre']." ".$registro['apellido'];
-    $id= $registro['id_usuario'];
+    $id= $registro['nroUsuario'];
     //verifico pass
     if($registro['contra']==$passForm){
         session_start();
         //echo "<br><br><br><h3> Inicia sesión <h3>";
         //cargar variables de sesion
-        $_SESSION['id_usuario']=$id;
-        $_SESSION['usuario']=$usu;
+        $_SESSION['nroUsuario']=$id;
+        $_SESSION['usu']=$usu;
         $_SESSION['nombre']=$nomyape;  
         ?>
     <meta http-equiv="Refresh" content="2; url=menu.php">

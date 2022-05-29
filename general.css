@@ -1,0 +1,78 @@
+body{
+
+ background-image: url("https://imagenes.elpais.com/resizer/hAha099uGI7HWlJh9iunniCJ07Q=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/2MRLAMWNLJE3TBYELF4EGKKREQ.jpg");
+
+}
+
+img{
+
+padding-left: 1000px;
+width: 250px;
+border-radius: 4px;
+height: 100px;
+
+
+
+}
+
+.centrar2{
+padding-left: 100px;
+padding-top: 100px;
+
+}
+
+.formular{
+
+margin: 0 auto;
+background-color: #1f3b6c;
+height: 600px;
+width: 600px;
+border-radius: 10px;
+
+}
+
+label{
+
+font-size: 20px;
+color: white;
+
+
+}
+
+input{
+border-radius: 5px;
+}
+
+.bott{
+
+background-color:  #b3b6b7 ; /* Green */
+    
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+
+    border-radius: 10px;
+}
+.bott2{
+
+background-color:  #b3b6b7 ; /* Green */
+    
+    color: white;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+
+    border-radius: 10px;
+}
+
+
+.centrar{
+
+padding-left: 450px;
+
+}
