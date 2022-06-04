@@ -1,16 +1,13 @@
 <?php
-session_start();
 
 
+require "conexion.php";
 
 //traer datos desde el formulario del navegador
 $usuarioForm=$_POST['usuario'];
 $passForm=$_POST['pass'];
 
 //echo "usuario $usuarioForm, pass $passForm";
-
-require "conexion.php";
-
 
 $con=mysqli_connect($servidorBD, $usuarioBD,$contraBD,$baseDatosBD) or die ("no se puede conectar a la base de datos");
 
