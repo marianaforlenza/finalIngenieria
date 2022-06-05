@@ -24,13 +24,12 @@ else{
         <link rel="stylesheet" href="general.css">    
 </head>
 <body>
-     
-          <?php
+    
+ <?php
+   echo '<font color="white">¡Bienvenido '.$nomyape.' a Supermercado Toledo!.</font><br><br>';
+ ?>
 
-echo "¡Bienvenido $nomyape!";
-
-?>
-            <div>
+    <div>
         <a href="index.php?logout" ><button >Cerrar sesion</button></a>
     </div>
           
@@ -44,10 +43,10 @@ echo "¡Bienvenido $nomyape!";
         <br>
                  
         <form action="listarProd.php" method="POST">
-		<input class="bott" type="submit" value="Buscar Productos">                     
+		<input class="bott" type="submit" value="Listar Productos">                     
         </form>                   
                                 
-		</div>
+   </div>
 
 </body>
 </html>
