@@ -11,13 +11,60 @@ width: 250px;
 border-radius: 4px;
 height: 100px;
 
+}
+.divCol{
 
+background-color:  #154360;
+padding-left: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 10px;
+ opacity: 0.80;
+
+
+}
+.ne{
+    font-weight: bold;
+}
+.divCol2{
+
+background-color:  #154360;
+padding-left: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+border-radius: 10px;
+ opacity: 0.80;
+ padding-left: 450px;
+
+
+}
+
+
+.inpGr{
+
+height: 30px;
+width: 200px;
 
 }
 
 .centrar2{
 padding-left: 100px;
 padding-top: 100px;
+
+}
+
+.centrar3{
+padding-left: 300px;
+
+}
+
+.buttong{
+background-color: #34495e;
+padding: 10px;
+color: white;
+border-radius: 10px;
+font-weight: bold;
 
 }
 
@@ -69,10 +116,60 @@ background-color:  #b3b6b7 ; /* Green */
 
     border-radius: 10px;
 }
+.bott3{
+
+background-color: red ; /* Green */
+    
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+
+    border-radius: 10px;
+}
+.bott4{
+
+background-color: green; /* Green */
+    
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+
+    border-radius: 10px;
+}
 
 
 .centrar{
 
 padding-left: 450px;
+
+}
+
+
+.tab{
+
+table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid  #1f3b6c;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+
+    border-radius: 20px;
+    background-color: grey;
+  
+  
+  
+ }
+
 
 }
