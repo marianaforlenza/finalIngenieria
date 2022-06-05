@@ -92,18 +92,18 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 
 <!-- Fecha de ingreso -->
  <label >Fecha de Ingreso: </label> <input type="date"  name="fechaIngre" required><br><br>
-	<input class="bott2" type="submit" value="Añadir Producto"><br><br>
+	<input class="bott" type="submit" value="Añadir Producto"><br><br>
                                 
   </form>   <!-- Agregar tipo de producto -->
     <form action="agregarTP.php" method="POST">
-    <input class="bott3" type="submit" value="Agregar Tipo de Producto"><br><br>
+    <input class="bott2" type="submit" value="Agregar Tipo de Producto"><br><br>
   </form>
 <!-- Agregar marca -->
  <form action="agregarM.php" method="POST">
-    <input class="bott3" type="submit" value="Agregar Marca"><br><br>
+    <input class="bott2" type="submit" value="Agregar Marca"><br><br>
  </form>
 <!-- Ir a menú principal -->
- <a href=menu.php><input class="bott3" type=button value="Volver"></a> <br><br><br> </form> 
+ <a href=menu.php><input class="bott2" type=button value="Volver"></a> <br><br><br> </form> 
 
   </div>
 </div>
