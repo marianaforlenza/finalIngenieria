@@ -41,26 +41,35 @@ $recordset = mysqli_query($conne, $sqlListar);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listar Productos</title> 
+    <link rel="stylesheet" href="general.css">
 </head>
 <body>
+
+    <img src="https://naurua.com/img/supermercados-toledo-logo.jpg">
     
-<div class=centrar>
 
+
+<div class="divCol2">
 <form action=listarProd.php method=POST>
-<input type=text name=buscarProd>
-<input type=submit value="Buscar producto">
-</form><br><br><br><br><br>
+<input class="inpGr" type=text placeholder="Ingrese el Código del Producto" name=buscarProd>
+<input class="buttong" type=submit value="Buscar producto">
+</form><br>
+</div>
+</div>
 
-<a href="listarProd.php?codigo"><button>Ordenar por código</button></a>
-<a href="listarProd.php?ordenNombre=asc"><button>Ordenar por nombre AZ</button></a>
-<a href="listarProd.php?ordenNombre=desc"><button>Ordenar por nombre ZA</button></a>
-<a href="listarProd.php?stock"><button>Ordenar por stock</button></a>  
+<div class="divCol">
+<div class="centrar3">
+<a href="listarProd.php?codigo"><button class="buttong">Ordenar por código</button></a>
+<a href="listarProd.php?ordenNombre=asc"><button class="buttong">Ordenar por nombre AZ</button></a>
+<a href="listarProd.php?ordenNombre=desc"><button class="buttong">Ordenar por nombre ZA</button></a>
+<a href="listarProd.php?stock"><button class="buttong">Ordenar por stock</button></a>  
+</div>
 </div><br>
 
 <form method=POST>
-<table>
-    <tr>
+<table class="tab">
+    <tr class="tab">
     <th>Código</th>
     <th>Nombre</th>
     <th>Precio</th>
@@ -171,8 +180,11 @@ while($registro=mysqli_fetch_row($recordset)){
 </table>
 
 <div class=centrar><br><br>
-<input type=submit value=Eliminar formaction=peliminar.php>
-<input type=submit value=Modificar formaction=modificar.php><br><br><br>
+<input class=bott3 type=submit value=Eliminar formaction=peliminar.php>
+<input class=bott4 type=submit value=Modificar formaction=modificar.php>
+
+<a href=menu.php><input class=bott type=button value="Volver"></a> <br><br><br> </form> 
+
 
 </div>
 
