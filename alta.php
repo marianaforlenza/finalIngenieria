@@ -78,10 +78,15 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 	<input class="bott2" type="submit" value="Añadir Producto"><br><br>
                                 
   </form>
-  <form action="menu.php" method="get">
-<input class="bott2"type=submit value="Volver al Menú principal" > 
+
+  <form action="agregarTP.php" method="POST">
+
+ <input  type="submit" value="Agregar Tipo de Producto">
 </form>
 
+ <form action="agregarM.php" method="POST">
+<input  type="submit" value="Agregar Marca">
+  </form>
   </div>
 </div>
                                                            
