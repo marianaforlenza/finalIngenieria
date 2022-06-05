@@ -1,10 +1,23 @@
 <?php
 
+session_start();
+//fijar si existe una variable de sesión que tenga alguno de los datos cargados
+if(isset($_SESSION['usu'])){
+    $nomyape= $_SESSION['nombre'];
+}
+else{
+    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
+    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
+    exit();
+}
+
+?>
+
+<?php
+
 require "conexion.php";
 $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("No se conectó");
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +37,7 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 
 <div class="centrar2">
         <form action="cargar.php" method="POST">
-<label >Nombre del Producto: </label><input type="text"  name="nomPro" required><br><br>
+<label >Nombre del Producto: </label><input type="text" maxlength="45" minlength="2" name="nomPro" required><br><br>
 
 
 <label >Tipo de Producto: </label>
@@ -51,9 +64,9 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 </select><br><br>
 
 
- <label >Precio del Producto: </label> <input type="number" name="preProd" min= 1 required><br><br>
+ <label >Precio del Producto: </label> <input type="text" pattern="^\d*(\.\d{0,2})?$"  title="Solo números y punto (para 2 decimales). Tamaño mínimo: 1, máximo: 9" name="preProd" min= 1 maxlength="9" required><br><br>
  
- <label >Stock del Producto: </label> <input type="number"  name="stoProd" min= 1 required><br><br>
+ <label >Stock del Producto: </label> <input type="text" pattern="[0-9]{1,4}"  title="Solo números. Tamaño mínimo: 1, máximo: 4" maxlength="4" name="stoProd" min= 1 required><br><br>
 
   
 <!-- select de marcas trayendolas desde la BD -->
@@ -81,16 +94,16 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
  <label >Fecha de Ingreso: </label> <input type="date"  name="fechaIngre" required><br><br>
 	<input class="bott2" type="submit" value="Añadir Producto"><br><br>
                                 
-  </form>
+  </form>   <!-- Agregar tipo de producto -->
     <form action="agregarTP.php" method="POST">
-    <input  class="bott3"  type="submit" value="Agregar Tipo de Producto"><br><br>
+    <input class="bott3" type="submit" value="Agregar Tipo de Producto"><br><br>
   </form>
-
+<!-- Agregar marca -->
  <form action="agregarM.php" method="POST">
     <input class="bott3" type="submit" value="Agregar Marca"><br><br>
  </form>
-  
- <a href=menu.php><input class="bott3"  type=button value="Volver"></a> <br><br><br> </form> 
+<!-- Ir a menú principal -->
+ <a href=menu.php><input class="bott3" type=button value="Volver"></a> <br><br><br> </form> 
 
   </div>
 </div>

@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+//fijar si existe una variable de sesión que tenga alguno de los datos cargados
+if(isset($_SESSION['usu'])){
+    $nomyape= $_SESSION['nombre'];
+}
+else{
+    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
+    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
+    exit();
+}
+
+?>
+
 
   <!DOCTYPE html>
 <html lang="en">
@@ -18,26 +33,20 @@
 
 
 <div class="centrar2">
-        <form action="cargaranexos.php" method="POST">
-<label >Tipo de Producto: </label><input type="text"  name="tiPr" required><br><br>
-
- 
- <input class="bott2" type="submit" value="Añadir Tipo de Producto">
- 
-	<br><br>
-                                
-  </form>
-
-
-  <form action="alta.php" method="get">
-<input class="bott2"type=submit value="Volver a la carga de Productos" > 
+<form action="cargaranexos.php" method="POST">
+  <label >Tipo de Producto: </label><input type="text"  name="tiPr" required><br><br>
+  <input class="bott2" type="submit" value="Añadir Tipo de Producto"><br><br>    
 </form>
 
+
+<form action="alta.php" method="get">
+  <input class="bott2"type=submit value="Volver a la carga de Productos" > 
+</form>
+
+  </div>
 </div>
-    </div>
                                
                                 
-		
 </body>
 </html>
 

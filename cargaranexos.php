@@ -1,61 +1,66 @@
 <?php
 
+session_start();
+//fijar si existe una variable de sesión que tenga alguno de los datos cargados
+if(isset($_SESSION['usu'])){
+    $nomyape= $_SESSION['nombre'];
+}
+else{
+    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
+    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
+    exit();
+}
+
+?>
 
 
+
+<?php
 
 require "conexion.php";
 
-$tiPr=$_POST["tiPr"];
-$mar=$_POST["mar"];
 
+// cargar tipo de producto
+if(isset($_POST["tiPr"])){
+    $tiPr=$_POST["tiPr"];
 
-if($tiPr!=null){
+    if($tiPr!=null){
 
-$con = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
-mysqli_select_db($con,$baseDatosBD) or die("no encontre la base de datos");
-$sql="insert into TIPO_PRODUCTOS(descripcion) VALUES ('$tiPr');";
+        $con = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
+        $sql="insert into tipo_productos (descripcion) VALUES ('$tiPr');";
+        $resulset= mysqli_query($con,$sql);
 
-$resulset= mysqli_query($con,$sql);
-
-
-if (mysqli_affected_rows ($con)>0){
-     echo '<script>alert("Tipo de Producto Cargado correctamente");</script>';
-     echo '<script>window.history.go(-2)</script>';
-     echo '<meta http-equiv="Refresh" content="0; url=agregarTP.php">';
-    exit();
-}
-else{
-   
-   echo '<script>alert("No se pudo cargar el Tipo de Producto");</script>';
-        echo '<script>window.history.go(-2)</script>';  
-}
+        if (mysqli_affected_rows ($con)>0){
+            echo "Tipo de Producto Cargado correctamente";
+            echo '<meta http-equiv="Refresh" content="0; url=alta.php">';
+        }
+        else{
+        echo "No se pudo cargar el Tipo de Producto";
+        echo '<meta http-equiv="Refresh" content="0; url=alta.php">';
+        }
   
-}
-if($mar!=null){
-
-$con = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
-mysqli_select_db($con,$baseDatosBD) or die("no encontre la base de datos");
-$sql="insert into MARCAS(descripcion) VALUES ('$mar');";
-
-$resulset= mysqli_query($con,$sql);
-
-
-
-if (mysqli_affected_rows ($con)>0){
-   
-    echo '<script>alert("Marca Ingresada Correctamente");</script>';
-    echo '<script>window.history.go(-2)</script>';
-    echo '<meta http-equiv="Refresh" content="0; url=agregarM.php">';
-    exit();
-     
-}
-else{
-      echo '<script>alert("No se pudo cargar la Marca ingresada");</script>';
-        echo '<script>window.history.go(-2)</script>';
-}
-  
+    }
 }
 
+// cargar marca
 
+if(isset($_POST['mar'])){
+    $mar = $_POST["mar"];
+
+    if($mar!=null){
+        $con = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
+        $sql="insert into marcas (descripcion) VALUES ('$mar');";
+        $resulset= mysqli_query($con,$sql);
+
+        if (mysqli_affected_rows ($con)>0){
+            echo "Marca Ingresada Correctamente";
+            echo '<meta http-equiv="Refresh" content="0; url=alta.php">';   
+        }
+        else{
+            echo "No se pudo cargar la Marca ingresada";
+            echo '<meta http-equiv="Refresh" content="0; url=alta.php">';
+        }
+    }
+}
 
 ?>
