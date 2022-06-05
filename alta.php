@@ -20,20 +20,21 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 
     <img src="https://naurua.com/img/supermercados-toledo-logo.jpg">
 
-
 <div class="formular">
 
 <div class="centrar2">
         <form action="cargar.php" method="POST">
-<label >Nombre del Producto: </label><input type="text"  name="nomPro"><br><br>
+<label >Nombre del Producto: </label><input type="text"  name="nomPro" required><br><br>
 
 
 <label >Tipo de Producto: </label>
- <select name="tiProd">
+ <select name="tiProd" required>
 <?php
   $getTipoProd1 = "select * from tipo_productos order by descripcion asc";
   $getTipoProd2 = mysqli_query($conn, $getTipoProd1);
 
+  echo '<meta http-equiv="Refresh" content="0; url=alta.php">';
+  
   while($row1 = mysqli_fetch_array($getTipoProd2))
   {
     $idTIPO_PRODUCTOS = $row1['idTIPO_PRODUCTOS'];
@@ -41,25 +42,28 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
   ?>
 
   <option value = "<?php echo $idTIPO_PRODUCTOS; ?>"> <?php echo $descripcion1 ?> </option>
+  
   <?php
   }
-?>
+  
+  ?>
 
 </select><br><br>
 
 
- <label >Precio del Producto: </label> <input type="text"  name="preProd"><br><br>
+ <label >Precio del Producto: </label> <input type="number" name="preProd" min= 1 required><br><br>
  
- <label >Stock del Producto: </label> <input type="text"  name="stoProd"><br><br>
+ <label >Stock del Producto: </label> <input type="number"  name="stoProd" min= 1 required><br><br>
 
   
 <!-- select de marcas trayendolas desde la BD -->
 <label >Marca del Producto: </label>
- <select name="marProd">
+ <select name="marProd" required>
     <?php
 
     $getMarcas1 = "select * from marcas order by descripcion asc";
     $getMarcas2 = mysqli_query($conn, $getMarcas1);
+    echo '<meta http-equiv="Refresh" content="0; url=alta.php">';
 
     while($row = mysqli_fetch_array($getMarcas2))
     {
@@ -74,23 +78,24 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
 </select><br><br>
 
 <!-- Fecha de ingreso -->
- <label >Fecha de Ingreso: </label> <input type="date"  name="fechaIngre"><br><br>
+ <label >Fecha de Ingreso: </label> <input type="date"  name="fechaIngre" required><br><br>
 	<input class="bott2" type="submit" value="Añadir Producto"><br><br>
                                 
   </form>
-
-  <form action="agregarTP.php" method="POST">
-
- <input  type="submit" value="Agregar Tipo de Producto">
-</form>
+    <form action="agregarTP.php" method="POST">
+    <input  type="submit" value="Agregar Tipo de Producto"><br><br>
+  </form>
 
  <form action="agregarM.php" method="POST">
-<input  type="submit" value="Agregar Marca">
-  </form>
+    <input  type="submit" value="Agregar Marca"><br><br>
+ </form>
+  
+ <a href=menu.php><input type=button value="Volver"></a> <br><br><br> </form> 
+
   </div>
 </div>
-                                                           
-		
+
+
 </body>
 </html>
 
