@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta de Productos</title>
+    <title>Agregar nuevas marcas</title>
     <link rel="stylesheet" href="general.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 
 <div class="centrar2">
         <form action="cargaranexos.php" method="POST">
-<label >Marca: </label><input type="text"  name="mar"><br><br>
+<label >Marca: </label><input type="text"  name="mar" required><br><br>
 
  
  <input class="bott2" type="submit" value="Añadir Marca">
@@ -30,13 +30,12 @@
   <form action="alta.php" method="get">
 <input class="bott2"type=submit value="Volver a la carga de Productos" > 
 </form>
-
+  
 </div>
-    </div>
+</div>
                                 
  
- 
-                                
+                               
 		
 </body>
 </html>

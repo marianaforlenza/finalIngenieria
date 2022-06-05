@@ -5,7 +5,6 @@
 
 require "conexion.php";
 
-
 $tiPr=$_POST["tiPr"];
 $mar=$_POST["mar"];
 
@@ -19,20 +18,17 @@ $sql="insert into TIPO_PRODUCTOS(descripcion) VALUES ('$tiPr');";
 $resulset= mysqli_query($con,$sql);
 
 
-
 if (mysqli_affected_rows ($con)>0){
      echo '<script>alert("Tipo de Producto Cargado correctamente");</script>';
-        echo '<script>window.history.go(-2)</script>';
-    
-  
+     echo '<script>window.history.go(-2)</script>';
+     echo '<meta http-equiv="Refresh" content="0; url=agregarTP.php">';
+    exit();
 }
 else{
    
    echo '<script>alert("No se pudo cargar el Tipo de Producto");</script>';
         echo '<script>window.history.go(-2)</script>';  
 }
-
-
   
 }
 if($mar!=null){
@@ -49,22 +45,16 @@ if (mysqli_affected_rows ($con)>0){
    
     echo '<script>alert("Marca Ingresada Correctamente");</script>';
     echo '<script>window.history.go(-2)</script>';
-  
-    
-   
+    echo '<meta http-equiv="Refresh" content="0; url=agregarM.php">';
+    exit();
+     
 }
 else{
       echo '<script>alert("No se pudo cargar la Marca ingresada");</script>';
         echo '<script>window.history.go(-2)</script>';
 }
-
   
 }
-
-
-
-
-
 
 
 
