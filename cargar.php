@@ -15,6 +15,9 @@ else{
 <head>
 
 <link href=general.css rel=stylesheet>
+
+<img src="https://naurua.com/img/supermercados-toledo-logo.jpg">
+
 </head>
 
 <?php
@@ -28,9 +31,8 @@ $stoProd=$_POST['stoProd'];
 $fechaIngre=$_POST['fechaIngre'];
 
 
-echo "El producto es $nomPro, el precio es $preProd, la categoria es $tiProd, y la marca es $marProd<br>";
-echo "<br> La fecha es $fechaIngre <br>";
-
+//echo "El producto es $nomPro, el precio es $preProd, la categoria es $tiProd, y la marca es $marProd<br>";
+//echo "<br> La fecha es $fechaIngre <br>";
 
 
 $con = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
@@ -62,10 +64,10 @@ $resulset4 = mysqli_query($connex, $sqlEntr_Prod);
 
 
 if (mysqli_affected_rows ($con)>0){
-    echo "El Producto se cargó Correctamente";
+   echo '<font color="white">El Producto se cargó Correctamente.</font><br><br>';
 }
 else{
-    echo"No se puedo cargar el producto";
+   echo '<font color="white">No se puedo cargar el producto.</font><br><br>';
 }
 
 ?>
