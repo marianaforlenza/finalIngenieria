@@ -1,11 +1,12 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="general.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -24,7 +25,7 @@ require "conexion.php";
 
 <form action=guardarCambios.php method=post>
 
-<table>
+<table class="tab">
     <tr><th>Código</th>
     <th>Nombre</th>
     <th>Precio</th>
@@ -109,13 +110,14 @@ while($fila=mysqli_fetch_row($resultProdModificar)){
 
 <br>
 <br>
-    Sumar stock<input type=number name=sumarStock value=0 >
-    Restar stock<input type=number name=restarStock value=0><br>
+<div class="divCol2">
+    <label class="ne">Sumar Stock: </label><input type=number name=sumarStock value=0 >
+    <label class="ne">Restar Stock: </label><input type=number name=restarStock value=0><br>
 
     <div class=centrar><br>
-    <input type=submit value="Guardar cambios">
+    <input class="bott2" type=submit value="Guardar cambios">
     </div><br>
-
+</div>
 
 
 </form>
