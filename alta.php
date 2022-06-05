@@ -83,14 +83,14 @@ $conn = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die 
                                 
   </form>
     <form action="agregarTP.php" method="POST">
-    <input  type="submit" value="Agregar Tipo de Producto"><br><br>
+    <input  class="bott3"  type="submit" value="Agregar Tipo de Producto"><br><br>
   </form>
 
  <form action="agregarM.php" method="POST">
-    <input  type="submit" value="Agregar Marca"><br><br>
+    <input class="bott3" type="submit" value="Agregar Marca"><br><br>
  </form>
   
- <a href=menu.php><input type=button value="Volver"></a> <br><br><br> </form> 
+ <a href=menu.php><input class="bott3"  type=button value="Volver"></a> <br><br><br> </form> 
 
   </div>
 </div>
