@@ -1,26 +1,3 @@
-
-<?php
-session_start();
-if(isset($_SESSION['usu'])){
-
-$usu=$_SESSION['usu'];
- $nomyape=$_SESSION['nombre'];  
-
-
-
-}
-
-else{
-
-echo "Acceso No Autorizado. Debe iniciar Sesion";
-echo '<meta http-equiv-"Refresh" content="2; url=index.php>';
-//echo $usu;
-//echo "el nombre es" .$nombre;
-exit();
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +23,6 @@ exit();
   $CodProducto=$_POST['CodProducto'];
   $detalle=$_POST['detalle'];
 
-//echo "<br> El producto a eliminar es $CodProducto <br>";
-//echo "<br> El detalle del producto es $detalle <br>";
-
   $con=mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die("no se pudo conectar a la BD");
 
   //Valido que la entrada del producto a eliminar exista
@@ -61,7 +35,6 @@ exit();
   if(mysqli_affected_rows($con)>0) 
      {
        $nroentrada=$registro['ENTRADAS_nroentrada'];
-       //echo "<br> EL numero de entrada es $nroentrada <br>";
        // ELIMINO LA RELACION ENTRADA - PRODUCTO
        $con1 = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
        $sqlEliminar2="delete from entradas_has_productos where PRODUCTOS_CodProducto_Entr = $CodProducto";
@@ -75,20 +48,16 @@ exit();
           $resulset3 = mysqli_query($con2,$sqlEliminar3);
           
           if (mysqli_affected_rows ($con2)>0){
-              echo "La entrada se ha eliminado correctamente <br><br>";
+              echo '<font color="white">La entrada se ha eliminado correctamente.</font><br><br>';
           }
           else{
-              echo"No se pudo eliminar la entrada: $nroentrada <br><br>";
+              echo '<font color="white">No se pudo eliminar la entrada: '.$nroentrada.'.</font><br><br>';
           }
-
-       //}
-       //else{
-       //   echo"No se pudo eliminar la entrada del producto: $detalle <br><br>";
        } 
 
      }
   else{
-       echo "No existe movimiento de entrada para el producto a eliminar. <br><br>";
+       echo '<font color="white">No existe movimiento de entrada para el producto a eliminar.</font><br><br>';
        
   };
   
@@ -97,24 +66,16 @@ exit();
   $sqlEliminar4="delete from productos_has_marcas where PRODUCTOS_CodProducto = $CodProducto";
   $resulset4 = mysqli_query($con4,$sqlEliminar4);
 
-  //if (mysqli_affected_rows ($con4)>0){
-  //    echo "La marca del Producto se ha eliminado correctamente <br><br>";
-
-  //}
-  //else{
-  //    echo "No se pudo eliminar el producto: $detalle <br><br>";
-  //}    
-
   // ELIMINO EL PRODUCTO
   $con5 = mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die ("no se pudo conectar a la Base de datos");
   $sqlEliminar5="delete from productos where CodProducto = $CodProducto";
   $resulset5 = mysqli_query($con5,$sqlEliminar5);
 
   if (mysqli_affected_rows ($con5)>0){
-      echo "El Producto se ha eliminado correctamente <br><br>";
+      echo '<font color="white">El Producto se ha eliminado correctamente.</font><br><br>';
   }
   else{
-      echo "No se pudo eliminar el producto: $detalle <br><br>";
+      echo '<font color="white">No se pudo eliminar el producto: '.$detalle.'.</font><br><br>';
   }
  
   ?>
