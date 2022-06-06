@@ -1,27 +1,17 @@
-
-
 <?php
 session_start();
 if(isset($_SESSION['usu'])){
 
 $usu=$_SESSION['usu'];
  $nomyape=$_SESSION['nombre'];  
-
-
-
 }
-
 else{
-
 echo "Acceso No Autorizado. Debe iniciar Sesion";
 echo '<meta http-equiv-"Refresh" content="2; url=index.php>';
-//echo $usu;
-//echo "el nombre es" .$nombre;
 exit();
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,9 +50,9 @@ require "conexion.php";
 while($fila=mysqli_fetch_row($resultProdModificar)){
     ?><tr>
     <td><input type=text readonly name=codProd value='<?php echo $fila[0]?>'></td>  <!-- Columna Código Producto -->
-    <td><input type=text name=nombreB value='<?php echo $fila[1]?>'></td>   <!-- Columna Nombre -->
-    <td><input type=number name=precioB value='<?php echo $fila[2]?>'></td> <!-- Columna Precio -->
-    <td><input type=number readonly name=stockB value='<?php echo $fila[3]?>'></td> <!-- Columna Stock -->
+    <td><input type=text name=nombreB maxlength="45" minlength="2" value='<?php echo $fila[1]?>'></td>   <!-- Columna Nombre -->
+    <td><input type=text name=precioB pattern="^\d*(\.\d{0,2})?$" min= 1 maxlength="9" value='<?php echo $fila[2]?>'></td> <!-- Columna Precio -->
+    <td><input type=text readonly name=stockB value='<?php echo $fila[3]?>'></td> <!-- Columna Stock -->
     <!-- Columna Categoría -->
     <?php
     $sqlBuscar_Cat = "select * from tipo_productos where idTIPO_PRODUCTOS = '$fila[4]'";
@@ -134,8 +124,8 @@ while($fila=mysqli_fetch_row($resultProdModificar)){
 <br>
 <br>
 <div class="divCol2">
-    <label class="ne">Sumar Stock: </label><input type=number name=sumarStock value=0 >
-    <label class="ne">Restar Stock: </label><input type=number name=restarStock value=0><br>
+    <label class="ne">Sumar Stock: </label><input type=text pattern="[0-9]{1,4}" min= 0 maxlength="4" name=sumarStock value=0 required>
+    <label class="ne">Restar Stock: </label><input type=text pattern="[0-9]{1,4}" min= 0 maxlength="4" name=restarStock value=0 required><br>
 
     <div class=centrar><br>
     <input class="bott2" type=submit value="Guardar cambios">
