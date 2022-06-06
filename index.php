@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if (isset($_GET['logout'])) {
+        session_destroy();
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
