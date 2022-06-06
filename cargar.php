@@ -75,7 +75,7 @@ else{
 <html>
 
 <head>
-<title>PAGINA WEB</title>
+<title>Confirmacion de alta</title>
 <link href=estilos.css rel=stylesheet>
 </head>
 
