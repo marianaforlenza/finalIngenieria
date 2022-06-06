@@ -1,3 +1,26 @@
+
+<?php
+session_start();
+if(isset($_SESSION['usu'])){
+
+$usu=$_SESSION['usu'];
+ $nomyape=$_SESSION['nombre'];  
+
+
+
+}
+
+else{
+
+echo "Acceso No Autorizado. Debe iniciar Sesion";
+echo '<meta http-equiv-"Refresh" content="2; url=index.php>';
+//echo $usu;
+//echo "el nombre es" .$nombre;
+exit();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
