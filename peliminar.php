@@ -50,7 +50,7 @@ require "conexion.php";
     else{    
       echo '<font color="white">El producto no existe en la base de datos.</font><br><br>';
       ?>
-      <a href=listarprod.php><input type=button value="Volver"></a> <br><br><br> </form> 
+      <a href=listarProd.php><input type=button value="Volver"></a> <br><br><br> </form> 
       <?php
 
     }
