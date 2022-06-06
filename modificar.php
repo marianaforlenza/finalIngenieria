@@ -144,10 +144,13 @@ while($fila=mysqli_fetch_row($resultProdModificar)){
 
 
 </form>
+ 
+ 
+ 
 <?php
 }
 ?>
 
-
+<a href=menu.php><input class=bott type=button value="Volver"></a> <br><br><br> </form>
 </body>
 </html>
