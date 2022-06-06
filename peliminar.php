@@ -1,15 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['usu'])){
-    $nomyape= $_SESSION['nombre'];
-    $nroUsuario = $_SESSION['nroUsuario'];
-}
-else{
-    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
-    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,13 +50,13 @@ require "conexion.php";
     else{    
       echo '<font color="white">El producto no existe en la base de datos.</font><br><br>';
       ?>
-       
+      <a href=listarprod.php><input type=button value="Volver"></a> <br><br><br> </form> 
       <?php
-    }
-?>
 
-<br>
-<a href=listarprod.php><input type=button value="Volver"></a> <br><br><br> </form>
+    }
+
+
+?>
 
 </div>
 </div>
