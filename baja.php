@@ -1,3 +1,17 @@
+<?php
+session_start();
+if(isset($_SESSION['usu'])){
+    $nomyape= $_SESSION['nombre'];
+    $nroUsuario = $_SESSION['nroUsuario'];
+}
+else{
+    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
+    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +93,7 @@
   }
  
   ?>
-  <a href=listarprod.php><input type=button value="Volver"></a> <br><br><br> </form> 
+  <a href=listarProd.php><input type=button value="Volver"></a> <br><br><br> </form> 
   <?php
 
 
