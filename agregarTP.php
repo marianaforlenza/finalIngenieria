@@ -1,18 +1,26 @@
-<?php
 
+<?php
 session_start();
-//fijar si existe una variable de sesión que tenga alguno de los datos cargados
 if(isset($_SESSION['usu'])){
-    $nomyape= $_SESSION['nombre'];
+
+$usu=$_SESSION['usu'];
+ $nomyape=$_SESSION['nombre'];  
+
+
+
 }
+
 else{
-    echo "ACCESO NO AUTORIZADO<br> DEBE INICIAR SESIÓN";
-    echo '<meta http-equiv="Refresh" content="3; url=index.php">';
-    exit();
+
+echo "Acceso No Autorizado. Debe iniciar Sesion";
+echo '<meta http-equiv-"Refresh" content="2; url=index.php>';
+//echo $usu;
+//echo "el nombre es" .$nombre;
+exit();
 }
+
 
 ?>
-
 
   <!DOCTYPE html>
 <html lang="en">
