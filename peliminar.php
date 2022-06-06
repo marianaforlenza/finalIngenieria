@@ -36,9 +36,11 @@ require "conexion.php";
     if(mysqli_affected_rows($con)>0) 
     {
       $detalle=$registro['detalle'];
-    
-      echo "Esta por eliminar el producto: $detalle <br>";
-      echo "<br>¿Desea continuar?<br>";
+      echo '<font color="white">Esta por eliminar el producto: '.$detalle.'.</font><br>';    
+    //echo "Esta por eliminar el producto: $detalle <br>";
+      echo '<font color="white"><br>¿Desea continuar?</font><br>';  
+    //echo "<br>¿Desea continuar?<br>";
+
       ?>
       <form method=post>
       <input type=hidden name="CodProducto" value=<?php echo($prodEliminar)?> >
@@ -50,7 +52,7 @@ require "conexion.php";
       <?php
     }
     else{    
-      echo "El producto seleccionado no existe en la base de datos. <br><br>";
+      echo '<font color="white">El producto seleccionado no existe en la base de datos.</font><br><br>';
       
     }
 
