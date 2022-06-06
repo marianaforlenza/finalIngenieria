@@ -22,8 +22,6 @@
 
 $prodEliminar = $_POST['selec'];
 
-//echo "<br> El producto a eliminar es $prodEliminar <br>";
-
 require "conexion.php";
     $con=mysqli_connect($servidorBD, $usuarioBD, $contraBD, $baseDatosBD) or die("no se pudo conectar a la BD");
 
@@ -37,10 +35,8 @@ require "conexion.php";
     {
       $detalle=$registro['detalle'];
       echo '<font color="white">Esta por eliminar el producto: '.$detalle.'.</font><br>';    
-    //echo "Esta por eliminar el producto: $detalle <br>";
       echo '<font color="white"><br>¿Desea continuar?</font><br>';  
-    //echo "<br>¿Desea continuar?<br>";
-
+    
       ?>
       <form method=post>
       <input type=hidden name="CodProducto" value=<?php echo($prodEliminar)?> >
@@ -52,9 +48,13 @@ require "conexion.php";
       <?php
     }
     else{    
-      echo '<font color="white">El producto seleccionado no existe en la base de datos.</font><br><br>';
-      
+      echo '<font color="white">El producto no existe en la base de datos.</font><br><br>';
+      ?>
+      <a href=listarprod.php><input type=button value="Volver"></a> <br><br><br> </form> 
+      <?php
+
     }
+
 
 ?>
 
