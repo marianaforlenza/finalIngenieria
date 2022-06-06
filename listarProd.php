@@ -1,6 +1,3 @@
-
-
-
 <?php
 session_start();
 if(isset($_SESSION['usu'])){
@@ -101,8 +98,6 @@ $recordset = mysqli_query($conne, $sqlListar);
     <th>Stock</th>
     <th>Categoría</th>
     <th>Marca</th>
-    <th>Fecha Ingreso</th>
-    <th>Fecha Egreso</th>
     </tr><br>
 
 <?php
@@ -145,12 +140,6 @@ if(isset($_POST['buscarProd'])){    //BUSCAR POR COINCIDENCIA
         $row_Marca2 = mysqli_fetch_row($recordset_BMarca2);
         ?>
         <td><?php echo $row_Marca2[1]?></td>
-
-        <!-- Columna Fecha Ingreso -->
-        <td><?php echo $row[6]?></td>
-
-        <!-- Columna Fecha Egreso -->
-        <td><?php echo $row[7]?></td>
         </tr>
     <?php
     }
